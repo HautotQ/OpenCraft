@@ -8,6 +8,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
 
 import javax.swing.*;
+import java.io.File;
+import java.net.URL;
 
 public class OCUtils {
     public static void showAlert(Alert.AlertType type, String title, String headerText, String message) {
@@ -46,15 +48,18 @@ public class OCUtils {
     }
 
     public static void applyCSS(Scene scene) {
-        //File cssFile = new File("out/production/Craftion/assets/style.css"); // fichier à la racine du dossier d'exécution
-        scene.getStylesheets().add(OCUtils.class.getResource("/assets/style.css").toExternalForm());
         /*
+        File cssFile = new File("target/classes/style.css"); // fichier à la racine du dossier d'exécution
+        //scene.getStylesheets().add(OCUtils.class.getResource("/assets/style.css").toExternalForm());
         if (cssFile.exists()) {
             scene.getStylesheets().add(cssFile.toURI().toString());
             System.out.println("Fichier CSS chargé depuis : " + cssFile.getAbsolutePath());
         } else {
             System.out.println("Fichier CSS introuvable à : " + cssFile.getAbsolutePath());
         }
-        */
+         */
+        URL cssURL = OCUtils.class.getResource("/style.css");
+        System.out.println("CSS URL: " + cssURL);
+        scene.getStylesheets().add(cssURL.toExternalForm());
     }
 }

@@ -1,0 +1,755 @@
+.root {
+    -fx-font-family: "JetBrains Mono", monospace;
+    -fx-base: #2e2e2e;
+    -fx-background: #1e1e1e;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 10pt;
+}
+
+/* MenuBar */
+.menu-bar {
+    -fx-background-color: #2b2b2b;
+    -fx-border-color: #444;
+    -fx-border-width: 0 0 1px 0;
+}
+
+/* Menus */
+.menu {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+.menu:hover {
+    -fx-background-color: #3a3a3a;
+}
+
+/* MenuItems */
+.menu-item {
+    -fx-text-fill: #eeeeee;
+    -fx-background-color: transparent;
+}
+.menu-item:hover {
+    -fx-background-color: #505050;
+    -fx-text-fill: #00d0ff;
+}
+.separator-menu-item {
+    -fx-background-color: #444;
+}
+
+/* Boutons généraux si utilisés dans les vues */
+.button {
+    -fx-background-color: #00aaff;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 8 16;
+}
+.button:hover {
+    -fx-background-color: #0077cc;
+}
+
+/* Titres personnalisés (si tu ajoutes des Labels pour titres par exemple) */
+.label.title {
+    -fx-font-size: 24px;
+    -fx-text-fill: #00ffcc;
+    -fx-font-weight: bold;
+}
+
+/* Pour les zones centrales */
+.border-pane {
+    -fx-background-color: #1e1e1e;
+    -fx-padding: 10;
+}
+
+/* ScrollPane si utilisé */
+.scroll-pane {
+    -fx-background: #1e1e1e;
+    -fx-border-color: #333;
+    -fx-border-width: 1;
+}
+
+/*AddQuestionView.java*/
+
+/* Container principal VBox */
+.add-question-view {
+    -fx-background-color: linear-gradient(to bottom right, #121212, #1e1e1e);
+    -fx-padding: 25px;
+    -fx-spacing: 18px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.3), 15, 0.4, 0, 0);
+    -fx-font-family: 'JetBrains Mono', monospace;
+}
+
+/* Titre */
+.add-question-view > .title-text {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-fill: #00fff7;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,247,0.8), 10, 0.5, 0, 0);
+    -fx-padding: 0 0 15 0;
+}
+
+/* Labels */
+.add-question-view Label {
+    -fx-text-fill: #39ff14; /* vert fluo style "terminal" */
+    -fx-font-weight: 600;
+    -fx-font-size: 15px;
+    -fx-padding: 6 0 4 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,20,0.5), 2, 0.2, 0, 0);
+}
+
+/* TextFields */
+.add-question-view TextField {
+    -fx-background-color: #222;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-border-color: #00fff7;
+    -fx-border-width: 2;
+    -fx-padding: 8 12 8 12;
+    -fx-font-size: 14px;
+    -fx-text-fill: #e0f7f7;
+    -fx-prompt-text-fill: #555;
+    -fx-font-family: 'jetBrains Mono', monospace;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,247,0.25), 4, 0.3, 0, 0);
+    -fx-transition: all 0.25s ease;
+}
+
+.add-question-view TextField:focused {
+    -fx-border-color: #39ff14;
+    -fx-background-color: #111;
+    -fx-effect: dropshadow(gaussian, rgba(57,255,20,0.8), 8, 0.4, 0, 0);
+}
+
+/* Bouton Ajouter */
+.add-question-view Button {
+    -fx-background-color: #00fff7;
+    -fx-text-fill: #121212;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10px;
+    -fx-padding: 10 25 10 25;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,247,0.7), 10, 0.3, 0, 2);
+    -fx-transition: background-color 0.3s ease;
+}
+
+.add-question-view Button:hover {
+    -fx-background-color: #39ff14;
+    -fx-text-fill: #111;
+}
+
+.add-question-view Button:pressed {
+    -fx-background-color: #00cc00;
+    -fx-text-fill: #eee;
+}
+
+/* Alert styles personnalisés */
+.alert {
+    -fx-font-family: 'Consolas', monospace;
+    -fx-background-color: #222;
+    -fx-text-fill: #39ff14;
+    -fx-border-color: #00fff7;
+    -fx-border-width: 2;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,247,0.5), 8, 0.3, 0, 0);
+}
+
+/* MLInfoView */
+
+/* Conteneur principal */
+.ml-info-view {
+    -fx-background-color: linear-gradient(to bottom, #1e1e2f, #2e2e3f);
+    -fx-padding: 20px;
+    -fx-spacing: 15px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.4, 0, 3);
+    -fx-font-family: 'JetBrains Mono', Consolas, 'Courier New', monospace;
+}
+
+/* Avertissement */
+.ml-info-view > .label {
+    -fx-text-fill: #aaaaaa;
+    -fx-font-size: 13px;
+    -fx-padding: 4 0 6 0;
+}
+
+/* Zone de markdown (WebView encapsulé) */
+.ml-info-view .markdown-box {
+    -fx-background-color: #282c34;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0.4, 0, 1);
+}
+
+/* Zone de saisie */
+.ml-info-view TextArea {
+    -fx-background-color: #1e1e2f;
+    -fx-text-fill: #eeeeee;
+    -fx-prompt-text-fill: #888888;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-font-size: 13px;
+    -fx-padding: 10;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 4, 0.2, 0, 1);
+}
+
+/* Bouton envoyer */
+.ml-info-view Button {
+    -fx-background-color: #00b894;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-padding: 8 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 5, 0.2, 0, 1);
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+.ml-info-view Button:hover {
+    -fx-background-color: #00a383;
+}
+
+.ml-info-view Button:pressed {
+    -fx-background-color: #008f71;
+}
+
+/* Spinner + texte "en train d'écrire" */
+.ml-info-view .progress-indicator,
+.ml-info-view .label[style*="italic"] {
+    -fx-text-fill: #bbbbbb;
+    -fx-font-style: italic;
+    -fx-font-size: 12px;
+}
+
+/* WebView (Markdown HTML) */
+.web-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* CommandView */
+
+.command-view {
+    -fx-padding: 15;
+    -fx-spacing: 10;
+    -fx-background-color: #0d1418; /* Fond sombre, légèrement bleu */
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-font-family: "JetBrains Mono", monospace;
+    -fx-text-fill: #a0e7ff;
+}
+
+.command-view .scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: #00c3ff;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.command-view .scroll-pane .viewport {
+    -fx-background-color: #121b22;
+    -fx-padding: 8;
+}
+
+.command-view .scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #00c3ff;
+    -fx-background-insets: 0;
+    -fx-background-radius: 4;
+}
+
+.command-view .text-field {
+    -fx-background-color: #122230;
+    -fx-text-fill: #a0e7ff;
+    -fx-border-color: #00aaff;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 8;
+    -fx-font-size: 14px;
+    -fx-font-family: "JetBrains Mono", monospace;
+}
+
+.command-view .button {
+    -fx-background-color: linear-gradient(to bottom, #005f7f, #003f5f);
+    -fx-text-fill: #c0ffff;
+    -fx-border-color: #00aaff;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-weight: bold;
+    -fx-font-family: "JetBrains Mono", monospace;
+    -fx-padding: 6 14;
+}
+
+.command-view .button:disabled {
+    -fx-background-color: #003a50;
+    -fx-text-fill: #507f9e;
+    -fx-border-color: #205070;
+}
+
+.command-view .label {
+    -fx-text-fill: #a0e7ff;
+    -fx-font-family: "JetBrains Mono", monospace;
+    -fx-font-size: 13px;
+}
+
+/* EditQuestionView */
+
+.edit-question-view {
+    -fx-background-color: #121212;
+    -fx-font-family: "JetBrains Mono", monospace;
+    -fx-text-fill: #00ff99;
+    -fx-padding: 20;
+    -fx-spacing: 15;
+    -fx-border-color: #00ff99;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.edit-question-view .label {
+    -fx-font-size: 14pt;
+    -fx-text-fill: #00ff99;
+    -fx-effect: dropshadow(gaussian, #00ff99, 3, 0.5, 0, 0);
+    -fx-padding: 5 0 5 0;
+}
+
+.edit-question-view .text-field {
+    -fx-background-color: #1e1e1e;
+    -fx-text-fill: #00ff99;
+    -fx-prompt-text-fill: #004d26;
+    -fx-border-color: #00ff99;
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-font-size: 13pt;
+    -fx-padding: 8 10 8 10;
+    -fx-cursor: text;
+    -fx-focus-color: #00ff99;
+    -fx-faint-focus-color: transparent;
+}
+
+.edit-question-view .text-field:focused {
+    -fx-border-color: #00ff99;
+    -fx-background-color: #002211;
+}
+
+.edit-question-view .button {
+    -fx-background-color: linear-gradient(to bottom, #004d26, #007a3d);
+    -fx-text-fill: #e6ffe6;
+    -fx-font-weight: bold;
+    -fx-font-size: 14pt;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 20 10 20;
+    -fx-effect: dropshadow(gaussian, #00ff99, 10, 0.5, 0, 0);
+    -fx-cursor: hand;
+    -fx-transition: background-color 0.3s ease;
+}
+
+.edit-question-view .button:hover {
+    -fx-background-color: linear-gradient(to bottom, #00ff99, #00cc66);
+    -fx-effect: dropshadow(gaussian, #00ff99, 15, 0.7, 0, 0);
+}
+
+.edit-question-view .button:pressed {
+    -fx-background-color: #009944;
+    -fx-effect: none;
+}
+
+/* ViewQuestionsView */
+
+.view-questions-view {
+    -fx-background-color: #1e1e1e;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+    -fx-font-family: "JetBrains Mono", monospace;
+    -fx-text-fill: #d4d4d4;
+}
+
+.view-questions-view .label {
+    -fx-text-fill: #00ff99;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.view-questions-view .button {
+    -fx-background-color: linear-gradient(to bottom, #3c3f41, #2b2b2b);
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #00ff99;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+    -fx-padding: 6 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,255,153,0.3), 5, 0, 0, 1);
+}
+
+.view-questions-view .button:hover {
+    -fx-background-color: #00ff99;
+    -fx-text-fill: #000000;
+    -fx-border-color: #1e1e1e;
+}
+
+.view-questions-view .list-view {
+    -fx-background-color: #252526;
+    -fx-border-color: #3c3f41;
+    -fx-border-width: 1;
+    -fx-cell-size: 60px;
+}
+
+.view-questions-view .list-cell {
+    -fx-text-fill: #dcdcaa;
+    -fx-font-size: 14px;
+    -fx-wrap-text: true;
+    -fx-padding: 10;
+    -fx-background-color: transparent;
+}
+
+.view-questions-view .list-cell:filled:selected {
+    -fx-background-color: #007acc;
+    -fx-text-fill: white;
+}
+
+.view-questions-view .context-menu {
+    -fx-background-color: #2d2d30;
+    -fx-text-fill: #d4d4d4;
+}
+
+.view-questions-view .menu-item {
+    -fx-text-fill: #ffffff;
+}
+
+.view-questions-view .menu-item:hover {
+    -fx-background-color: #00ff99;
+    -fx-text-fill: #000000;
+}
+
+/* Alert */
+
+/* Fond sombre façon terminal */
+.dialog-pane {
+    -fx-background-color: #1e1e1e;
+    -fx-font-family: "JetBrains Mono", monospace;
+    -fx-font-size: 14px;
+}
+
+/* Texte cyan néon */
+.dialog-pane .label {
+    -fx-text-fill: #00ffcc;
+}
+
+/* Boutons avec effet lumineux */
+.dialog-pane .button {
+    -fx-background-color: #000000;
+    -fx-text-fill: #00ffcc;
+    -fx-border-color: #00ffcc;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, #00ffcc, 5, 0.5, 0, 0);
+}
+
+/* Hover sur les boutons */
+.dialog-pane .button:hover {
+    -fx-background-color: #00ffcc;
+    -fx-text-fill: #000000;
+    -fx-cursor: hand;
+}
+
+/* En-tête stylée */
+.dialog-pane .header-panel {
+    -fx-background-color: transparent;
+    -fx-padding: 10px;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: #00ffcc;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-font-family: "JetBrains Mono", monospace;
+}
+
+/* FileEdit */
+
+/* Style général de la vue */
+.file-edit {
+    -fx-background-color: #0f111a;
+    -fx-padding: 20;
+    -fx-spacing: 15;
+    -fx-font-family: "JetBrains Mono", monospace;
+}
+
+/* Zone de texte avec style terminal */
+.file-edit .text-area {
+    -fx-control-inner-background: #1a1d29;
+    -fx-font-size: 14px;
+    -fx-text-fill: #00ffcc;
+    -fx-highlight-fill: #ff00aa55;
+    -fx-highlight-text-fill: white;
+    -fx-border-color: #00ffcc;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-effect: dropshadow(gaussian, #00ffcc55, 6, 0.4, 0, 0);
+}
+
+/* Boutons style cyber */
+.file-edit .button {
+    -fx-background-color: linear-gradient(to bottom, #222933, #0c0f14);
+    -fx-text-fill: #00ffff;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-border-color: #00ffff;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #00ffff44, 4, 0.3, 0, 0);
+    -fx-font-size: 13px;
+}
+
+/* Effet au survol */
+.file-edit .button:hover {
+    -fx-background-color: #1c1f29;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #ff00ff;
+    -fx-effect: dropshadow(gaussian, #ff00ff55, 6, 0.4, 0, 0);
+}
+
+/* Effet au clic */
+.file-edit .button:pressed {
+    -fx-background-color: #00ffcc33;
+    -fx-text-fill: #ffffff;
+}
+
+/* PlayQuestionsView */
+
+.play-questions-view {
+    -fx-background-color: linear-gradient(to bottom, #1e1e1e, #2c2c2c);
+    -fx-font-family: "JetBrains Mono", monospace;
+    -fx-text-fill: #00ffcc;
+}
+
+.label {
+    -fx-text-fill: #00ffcc;
+}
+
+.play-questions-view .label.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00ffcc;
+}
+
+.play-questions-view .label.progress {
+    -fx-font-size: 16px;
+    -fx-text-fill: #88ffcc;
+}
+
+.play-questions-view .text-field {
+    -fx-background-color: #111;
+    -fx-text-fill: #00ffaa;
+    -fx-border-color: #00ffaa;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-font-size: 14px;
+}
+
+.play-questions-view .button {
+    -fx-background-color: linear-gradient(to bottom, #006666, #003333);
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-border-color: #00ffcc;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 10 20 10 20;
+    -fx-cursor: hand;
+}
+
+.play-questions-view .button:hover {
+    -fx-background-color: linear-gradient(to bottom, #00aaaa, #005555);
+}
+
+.play-questions-view .progress-bar {
+    -fx-accent: #00ffaa;
+    -fx-control-inner-background: #111;
+    -fx-background-insets: 0;
+    -fx-background-radius: 5;
+}
+
+.play-questions-view .alert {
+    -fx-font-family: "JetBrains Mono", monospace;
+}
+
+/* QuestionsExample */
+
+.questions-example {
+    -fx-background-color: #1e1e1e;
+    -fx-padding: 20;
+    -fx-spacing: 10;
+}
+
+.questions-example .label {
+    -fx-font-family: "jetBrains Mono", monospace;
+    -fx-font-size: 14px;
+    -fx-text-fill: #cddc39;
+    -fx-background-color: #2a2a2a;
+    -fx-padding: 6px 10px;
+    -fx-border-color: #3f3f3f;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(gaussian, #00ffcc33, 2, 0.5, 0, 0);
+}
+
+.questions-example .hbox {
+    -fx-background-color: #121212;
+    -fx-padding: 8px;
+    -fx-spacing: 12;
+    -fx-border-color: #333;
+    -fx-border-width: 1px 0 1px 0;
+    -fx-border-style: solid;
+}
+
+.questions-example .label:first-child {
+    -fx-text-fill: #64b5f6;
+    -fx-font-weight: bold;
+}
+
+/* SettingsView */
+
+/* Style général de la VBox */
+.settings-view {
+    -fx-background-color: #0d1117; /* fond très sombre, presque noir */
+    -fx-padding: 20;
+    -fx-spacing: 15;
+    -fx-border-color: #39ff14; /* vert fluo */
+    -fx-border-width: 2;
+    -fx-border-radius: 8;
+    -fx-effect: dropshadow(gaussian, #39ff14, 15, 0.5, 0, 0);
+}
+
+/* CheckBox style - techno, avec police monospace */
+.check-box {
+    -fx-text-fill: #39ff14; /* vert fluo */
+    -fx-font-family: "JetBrains Mono", monospace;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+}
+
+/* Style du texte quand la CheckBox est sélectionnée */
+.check-box:selected {
+    -fx-text-fill: #00e676; /* vert plus clair */
+}
+
+/* Style de la case à cocher */
+.check-box > .box {
+    -fx-border-color: #39ff14;
+    -fx-border-width: 2;
+    -fx-background-color: transparent;
+    -fx-padding: 5;
+    -fx-shape: "M0 0 L10 0 L10 10 L0 10 Z"; /* carré */
+    -fx-cursor: hand;
+}
+
+/* Case cochée - background vert fluo avec effet glow */
+.check-box:selected > .box {
+    -fx-background-color: #39ff14;
+    -fx-effect: innershadow(gaussian, #00e676, 10, 0.7, 0, 0);
+}
+
+/* Separator personnalisé */
+.separator {
+    -fx-background-color: linear-gradient(to right, transparent, #39ff14, transparent);
+    -fx-pref-height: 2;
+    -fx-opacity: 0.6;
+    -fx-padding: 5 0 5 0;
+}
+
+/* Hover effet sur CheckBox */
+.check-box:hover {
+    -fx-text-fill: #00e676;
+    -fx-effect: dropshadow(gaussian, #00e676, 10, 0.6, 0, 0);
+}
+
+.commands-list {
+    -fx-background-color: #121212;
+    -fx-padding: 15;
+    -fx-spacing: 12;
+    -fx-border-radius: 8;
+    -fx-font-family: "JetBrains Mono", monospace;
+    -fx-font-size: 14px;
+    -fx-text-fill: #00ffea;
+    -fx-effect: dropshadow(gaussian, #00ffea, 10, 0.3, 0, 0);
+}
+
+.commands-list > .h-box {
+    -fx-background-color: rgba(0, 255, 234, 0.15);
+    -fx-padding: 8 12 8 12;
+    -fx-spacing: 20;
+    -fx-alignment: center_left;
+    -fx-border-radius: 6;
+    -fx-border-color: #00ffea;
+    -fx-border-width: 1;
+}
+
+.commands-list > .h-box > Label {
+    -fx-text-fill: #00ffea;
+    -fx-font-weight: bold;
+    -fx-pref-width: 350px;
+    -fx-wrap-text: true;
+}
+
+.commands-list > .h-box > Button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #00ffd1;
+    -fx-border-color: #00ffd1;
+    -fx-border-radius: 4;
+    -fx-border-width: 1.5;
+    -fx-padding: 5 15 5 15;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-font-family: "JetBrains Mono", Courier, monospace;
+    -fx-transition: all 0.3s ease;
+}
+
+.commands-list > .h-box > Button:hover {
+    -fx-background-color: #00ffd1;
+    -fx-text-fill: #121212;
+    -fx-border-color: transparent;
+}
+
+/* TitleBar */
+
+.title-bar {
+    -fx-background-color: linear-gradient(to right, #2b2b2b, #3c3f41);
+    -fx-padding: 5 10 5 10;
+    -fx-alignment: center-left;
+    -fx-spacing: 10;
+    -fx-border-color: #1f1f1f;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* Label titre */
+.title-bar .label {
+    -fx-text-fill: #00ffcc;
+    -fx-font-size: 14px;
+    -fx-font-family: "JetBrains Mono", monospace;
+}
+
+/* Boutons */
+.title-bar .button {
+    -fx-background-color: #1e1e1e;
+    -fx-text-fill: #00ffcc;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 2 8;
+    -fx-background-radius: 3;
+    -fx-border-radius: 3;
+    -fx-border-color: #00ffcc;
+    -fx-border-width: 1;
+}
+
+.title-bar .button:hover {
+    -fx-background-color: #00ffcc;
+    -fx-text-fill: #1e1e1e;
+    -fx-border-color: #00ffcc;
+}

@@ -25,14 +25,13 @@
 
 
     <properties>
-        <maven.compiler.source>24</maven.compiler.source>
-        <maven.compiler.target>24</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- JavaFX -->
-        <javafx.version>20</javafx.version>
-        <!-- Modifie cette valeur selon ton OS : win, linux ou mac -->
-        <javafx.platform>mac</javafx.platform>
+        <javafx.version>19</javafx.version> <!-- ou 20 si tu veux tester -->
+        <javafx.platform>mac</javafx.platform> <!-- car tu es sur macOS -->
     </properties>
 
     <dependencies>

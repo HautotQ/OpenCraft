@@ -16,12 +16,17 @@ public class ContentView extends VBox {
     public ContentView() {
         root = new BorderPane();
         this.getChildren().add(root);
+
+        Label defaultLabel = new Label("Bienvenue dans OpenCraft ! Sélectionne une option dans le menu pour commencer.");
+        defaultLabel.setStyle("-fx-font-size: 16px; -fx-text-alignment: center; -fx-padding: 20;");
+        root.setCenter(new StackPane(defaultLabel));
+
         // Création de la barre de menu
         MenuBar menuBar = new MenuBar();
         menuBar.useSystemMenuBarProperty().set(true);
 
         // Menu "craftion"
-        Menu craftion = new Menu("Craftion");
+        Menu craftion = new Menu("Menu");
 
         MenuItem addQuestion = new MenuItem("Ajouter une Question");
         addQuestion.setOnAction(e -> {
@@ -131,15 +136,15 @@ public class ContentView extends VBox {
         infos.setOnAction(e -> {
             OCUtils.showAlert(
                     Alert.AlertType.INFORMATION,
-                    "Informations sur Craftion",
+                    "Informations sur OpenCraft",
                     """
                             Version: 1.7
                             Développeur: Tabarcraft
                             """,
                     """
                             Notes:
-                            1) Craftion est créé par un développeur indépendant(à l'origine) de 14 ans, lors de la sortie de la v1.
-                            2) MLInfo est en réalité une version de DeepSeek, disponible gratuitement sur OpenRouter.
+                            1) OpenCraft est créé par un développeur indépendant(à l'origine) de 14 ans, lors de la sortie de la v1.
+                            2) MLInfo est un secret.
                             """
             );
         });

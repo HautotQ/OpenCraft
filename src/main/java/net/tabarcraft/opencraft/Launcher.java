@@ -11,7 +11,7 @@ public class Launcher extends Application {
         Scene scene = new Scene(content, 800, 600);
         OCUtils.applyCSS(scene);
 
-        primaryStage.setTitle("Craftion");
+        primaryStage.setTitle("OpenCraft");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
