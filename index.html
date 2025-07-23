@@ -6,43 +6,85 @@
     <title>OpenCraft Officiel</title>
     <style>
         body {
-            font-family: JetBrains Mono;
-            margin: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #0f0f0f;
+            color: #33ff66;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        h1 {
+        #terminal-title {
             text-align: center;
+            font-size: 2.5em;
+            margin-top: 40px;
+            text-shadow: 0 0 10px #33ff66;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #33ff66;
+            width: 0;
+            animation: typing 3s steps(40, end) forwards, blink 0.7s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 22ch }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent }
+        }
+
+        p {
+            text-align: center;
+            max-width: 600px;
+            margin: 20px auto;
+            font-size: 1.1em;
+            line-height: 1.6;
         }
 
         .center {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         .download-button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 24px;
+            background-color: transparent;
+            color: #33ff66;
+            border: 2px solid #33ff66;
+            padding: 14px 28px;
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 16px;
-            display: inline-block;
+            border-radius: 10px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 8px #33ff66;
         }
 
         .download-button:hover {
-            background-color: #45a049;
+            background-color: #33ff66;
+            color: #000;
+            box-shadow: 0 0 16px #33ff66;
+        }
+
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #777;
         }
     </style>
 </head>
 <body>
 
-<h1>
-    OpenCraft – site officiel
-</h1>
+<h1 id="terminal-title">OpenCraft – site officiel</h1>
 
 <p>
-    Bonjour !
-    Si vous êtes tombé sur ce site web, c'est sûrement que vous êtes tombés sur mon dépôt GitHub. Si vous êtes également sur ce site, c'est sans doute pour télécharger le logiciel.
+    Bonjour !<br>
+    Si vous êtes tombé sur ce site web, c'est sûrement que vous avez trouvé mon dépôt GitHub.<br>
+    Et si vous êtes ici, c'est sans doute pour télécharger le logiciel !
 </p>
 
 <div class="center">
@@ -51,6 +93,11 @@
     </a>
 </div>
 
+<footer>
+    © 2025 OpenCraft — Tous droits réservés
+</footer>
+
 </body>
 </html>
+
 
