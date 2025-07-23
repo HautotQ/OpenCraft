@@ -6,7 +6,8 @@ import javafx.collections.*;
 
 public class QuestionStore {
     private final ObservableList<Question> questions = FXCollections.observableArrayList();
-    private static final String SAVE_PATH = "questions.txt"; // nouveau fichier texte
+    private static final String SAVE_PATH =
+            System.getProperty("user.home") + "/.opencraft-questions.txt";
 
     public QuestionStore() {
         loadQuestions();

@@ -1,5 +1,5 @@
 #!/bin/bash
-# 1. Générer runtime
+
 JAVAFX_SDK=/Users/quentin/MavenTest/OpenCraft/src/main/resources/jmods
 JAVA_HOME=$(/usr/libexec/java_home)
 RUNTIME_IMAGE=custom-runtime
@@ -13,7 +13,6 @@ jlink \
   --no-header-files \
   --no-man-pages
 
-# 2. Packager app
 jpackage \
   --input /Users/quentin/MavenTest/OpenCraft/out/artifacts/OpenCraft_jar \
   --name OpenCraft \
@@ -28,4 +27,5 @@ jpackage \
   --runtime-image $RUNTIME_IMAGE \
   --java-options '--enable-preview --enable-native-access=ALL-UNNAMED' \
   --verbose
+
 
