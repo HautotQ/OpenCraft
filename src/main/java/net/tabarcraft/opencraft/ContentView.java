@@ -148,7 +148,6 @@ public class ContentView extends VBox {
                             """
             );
         });
-        MenuItem docDev = new MenuItem("Documentation du développeur");
         MenuItem settings = new MenuItem("Réglages");
         settings.setOnAction(e -> {
             SettingsView settingsView = new SettingsView();
@@ -158,7 +157,6 @@ public class ContentView extends VBox {
         quit.setOnAction(e -> System.exit(0));
         about.getItems().addAll(
                 infos,
-                docDev,
                 settings,
                 quit
         );

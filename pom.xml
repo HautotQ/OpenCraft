@@ -69,15 +69,6 @@
                     <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
-            <!-- Compiler plugin déjà présent -->
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
-                <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
-                </configuration>
-            </plugin>
 
             <!-- Plugin pour lancer JavaFX -->
             <plugin>
@@ -86,7 +77,6 @@
                 <version>3.1.0</version>
                 <configuration>
                     <mainClass>net.tabarcraft.opencraft.Launcher</mainClass>
-                    <commandlineArgs></commandlineArgs>
                     <arguments>
                         <argument>--module-path</argument>
                         <argument>${java.home}/lib:${settings.localRepository}/org/openjfx/javafx-controls/${javafx.version}/javafx-controls-${javafx.version}-${javafx.platform}.jar</argument>

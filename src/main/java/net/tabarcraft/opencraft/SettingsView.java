@@ -5,39 +5,19 @@ import javafx.scene.control.Separator;
 import javafx.scene.layout.VBox;
 
 public class SettingsView extends VBox {
-    static AppStorage storage = new AppStorage("config.properties");
-
-    public static boolean isCoolMode = storage.getBoolean("isCoolMode", true);
-    public static boolean isSoundOn = storage.getBoolean("isSoundOn", true);
+    private static final AppStorage storage = new AppStorage(System.getProperty("user.home") + "/.config.properties");
 
     public SettingsView() {
         this.getStyleClass().add("settings-view");
-        CheckBox toggleSound = new CheckBox("Son");
-        toggleSound.setSelected(isSoundOn);
-        toggleSound.setOnAction(e -> {
-            boolean enabled = toggleSound.isSelected();
-            isSoundOn = enabled;
-            set("isSoundOn", enabled);
-            System.out.println("Son activé : " + enabled);
-        });
 
-        CheckBox toggleCoolMode = new CheckBox("Mode Cool(recommandé si vous étudiez de la théorie)");
-        toggleCoolMode.setSelected(isCoolMode);
+        CheckBox toggleCoolMode = new CheckBox("Mode Cool (recommandé si vous étudiez de la théorie)");
+        toggleCoolMode.setSelected(storage.getBoolean("isCoolMode", true));
         toggleCoolMode.setOnAction(e -> {
             boolean enabled = toggleCoolMode.isSelected();
-            isCoolMode = enabled;
-            set("isCoolMode", enabled);
-            System.out.println("Mode Cool activé: " + enabled);
+            storage.setBoolean("isCoolMode", enabled);
+            System.out.println("Mode Cool activé : " + enabled);
         });
 
-        this.getChildren().addAll(
-                toggleSound,
-                new Separator(),
-                toggleCoolMode
-        );
-    }
-
-    public static void set(String key, boolean value) {
-        storage.setBoolean(key, value);
+        this.getChildren().addAll(toggleCoolMode);
     }
 }

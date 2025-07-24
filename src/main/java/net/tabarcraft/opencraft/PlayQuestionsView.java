@@ -5,7 +5,6 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
-import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
 import java.util.*;
 import java.util.function.Consumer;
@@ -134,7 +133,7 @@ public class PlayQuestionsView extends VBox {
             }
             //playSound("levelup");
             askNextQuestion();
-        } else if (isApproximatelyEqual(userAnswer, currentQuestion.getAnswer()) && SettingsView.isCoolMode) {
+        } else if (isApproximatelyEqual(userAnswer, currentQuestion.getAnswer()) && Settings.isCoolMode()) {
             if (!incorrectQuestionSet.contains(currentQuestion)) {
                 score++;
             }
@@ -175,18 +174,6 @@ public class PlayQuestionsView extends VBox {
         // Appel du callback pour afficher la vue de fin en centre
         if (onEndView != null) {
             onEndView.accept(endRoot);
-        }
-    }
-
-    private void playSound(String name) {
-        if (!SettingsView.isSoundOn) return;
-
-        try {
-            String soundPath = getClass().getResource("/sounds/" + name + ".mp3").toString();
-            AudioClip clip = new AudioClip(soundPath);
-            clip.play();
-        } catch (Exception e) {
-            System.err.println("Erreur de lecture audio : " + e.getMessage());
         }
     }
 
