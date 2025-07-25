@@ -1,7 +1,7 @@
 package net.tabarcraft.opencraft;
 
 public class Settings {
-    private static final AppStorage storage = new AppStorage(System.getProperty("user.home") + "/.opencraft.properties");
+    private static final AppStorage storage = new AppStorage(System.getProperty("user.home") + "/.config.properties");
 
     public static boolean isCoolMode() {
         return storage.getBoolean("isCoolMode", true);
