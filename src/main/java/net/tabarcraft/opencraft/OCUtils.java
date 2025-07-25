@@ -6,9 +6,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 
 import javax.swing.*;
 import java.io.File;
+import java.io.InputStream;
 import java.net.URL;
 
 public class OCUtils {
@@ -48,18 +51,24 @@ public class OCUtils {
     }
 
     public static void applyCSS(Scene scene) {
-        /*
-        File cssFile = new File("target/classes/style.css"); // fichier à la racine du dossier d'exécution
-        //scene.getStylesheets().add(OCUtils.class.getResource("/assets/style.css").toExternalForm());
-        if (cssFile.exists()) {
-            scene.getStylesheets().add(cssFile.toURI().toString());
-            System.out.println("Fichier CSS chargé depuis : " + cssFile.getAbsolutePath());
-        } else {
-            System.out.println("Fichier CSS introuvable à : " + cssFile.getAbsolutePath());
-        }
-         */
         URL cssURL = OCUtils.class.getResource("/style.css");
         System.out.println("CSS URL: " + cssURL);
         scene.getStylesheets().add(cssURL.toExternalForm());
     }
+    public static void getFont() {
+        InputStream fontStream = OCUtils.class.getResourceAsStream("/fonts/JetBrainsMono-Bold.ttf");
+
+        if (fontStream == null) {
+            System.err.println("❌ Fichier de police introuvable !");
+            return;
+        }
+
+        Font font = Font.loadFont(fontStream, 12);
+        if (font == null) {
+            System.err.println("❌ Police non chargée !");
+        } else {
+            System.out.println("✅ Police chargée : " + font.getName());
+        }
+    }
+
 }

@@ -162,7 +162,7 @@ public class ContentView extends VBox {
         );
 
         // Ajout des menus à la barre
-        menuBar.getMenus().addAll(craftion, cmds, about);
+        menuBar.getMenus().addAll(craftion, about);
 
         VBox topContainer = new VBox();
         topContainer.getChildren().addAll(menuBar);

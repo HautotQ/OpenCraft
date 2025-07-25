@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 public class Launcher extends Application {
     @Override
     public void start(Stage primaryStage) {
+        OCUtils.getFont();
         ContentView content = new ContentView();
         Scene scene = new Scene(content, 800, 600);
         OCUtils.applyCSS(scene);
